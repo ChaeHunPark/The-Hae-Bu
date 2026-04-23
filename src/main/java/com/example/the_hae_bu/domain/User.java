@@ -29,5 +29,9 @@ public class User {
         return this.money;
     }
 
+    public void 돈_채우기(int money) {
+        this.money += money;
+    }
+
 
 }

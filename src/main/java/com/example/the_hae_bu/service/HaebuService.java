@@ -13,12 +13,14 @@ public class HaebuService {
     private final UserRepository userRepository;
 
 
-
     public void 유저_만들기 (String name, int money) {
         userRepository.save(new User(name, money));
     }
 
-//    @Transactional     // 실험 포인트 : @Transactional 어노테이션이 없다면?
+
+    // 실험 1
+    // 포인트 : @Transactional 어노테이션이 없다면?
+    @Transactional
     public void 택배_시키기 (String name ,int 보낼돈) {
         User user = userRepository.findByName(name);
         user.돈_보내기(보낼돈);
@@ -30,9 +32,18 @@ public class HaebuService {
         throw new RuntimeException("시스템 폭파됨..");
 
         // 뒤에는 물건 받는 로직이 있음
-
-
     }
+
+    // 실험 2
+    // 포인트 : readOnly = true 옵션을 붙인다면?
+    @Transactional(readOnly = true)
+    public void 돈_채우기(String name, int 돈) {
+        User user = userRepository.findByName(name);
+        user.돈_채우기(돈);
+    }
+
+
+
 
 
 }
