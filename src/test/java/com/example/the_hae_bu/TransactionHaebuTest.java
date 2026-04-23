@@ -43,10 +43,18 @@ public class TransactionHaebuTest {
     void 실험2_readOnly_true는_디비에_반영될까() {
 
         haebuService.유저_만들기("해부11", 10000);
-        haebuService.돈_채우기("해부11",5000);
+        haebuService.서비스_돈_채우기("해부11",5000);
 
         User user = userRepository.findByName("해부11");
 
+        System.out.println(user.돈_확인하기());
+    }
+
+    @Test
+    void 실험3_트랜잭션_없는_메서드에_트랜잭션_있는_메서드_넣으면_디비에_반영이_될까(){
+        haebuService.유저_만들기("해부11", 10000);
+        haebuService.돈_채우기_트랜잭션_없음("해부11",5000);
+        User user = userRepository.findByName("해부11");
         System.out.println(user.돈_확인하기());
     }
 

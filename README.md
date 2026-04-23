@@ -13,10 +13,12 @@
 ---
 
 ## 📂 실험 리스트 (The Log)
-
 | 순번 | 실험 주제 (Click to Report)                                          | 핵심 키워드 | 상태 |
 | :--- |:-----------------------------------------------------------------| :--- | :--- |
-| **01** | **[@Transactional을 빼면 어떻게 될까?](./docs/01-transactional-off.md)** | AOP, Proxy, Atomicity | 🏗️ 집도 중 |
+| **01** | **[@Transactional을 빼면 어떻게 될까?](./docs/01-transactional-off.md)** | AOP, Proxy, Dirty Checking | ✅ 집도 완료 |
+| **02** | **[@Transactional(readOnly = true)의 실체](./docs/02-transactional-read-only.md)** | Snapshot, Memory Optimization | ✅ 집도 완료 |
+| **03** | **[프록시 자기 호출(Self-Invocation)의 배신](./docs/03-proxy-self-invocation.md)** | Internal Call, AOP Proxy | ✅ 집도 완료 |
+| **04** | **예외 발생 시 롤백 정책 (Checked vs Unchecked)** | Exception, Rollback, Commit | 🏗️ 집도 예정 |
 
 ---
 

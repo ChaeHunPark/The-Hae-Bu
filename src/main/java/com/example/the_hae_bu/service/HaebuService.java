@@ -37,10 +37,25 @@ public class HaebuService {
     // 실험 2
     // 포인트 : readOnly = true 옵션을 붙인다면?
     @Transactional(readOnly = true)
-    public void 돈_채우기(String name, int 돈) {
+    public void 서비스_돈_채우기(String name, int 돈) {
         User user = userRepository.findByName(name);
         user.돈_채우기(돈);
     }
+
+
+    // 실험 3
+    // 포인트 : 트랜잭셔널 어노테이션이 있는 메서드를 트랜잭셔널 어노테이션이 없는 메서드에 넣는다면?
+    @Transactional
+    public void 돈_채우기_트랜잭션_있음(String name, int 돈) {
+        User user = userRepository.findByName(name);
+        user.돈_채우기(돈);
+    }
+
+    public void 돈_채우기_트랜잭션_없음(String name, int 돈) {
+        User user = userRepository.findByName(name);
+        돈_채우기_트랜잭션_있음(name, 돈);
+    }
+
 
 
 
