@@ -56,7 +56,27 @@ public class HaebuService {
         돈_채우기_트랜잭션_있음(name, 돈);
     }
 
+    // 실험 4
+    // 포인트 : Unchecked Exception (RuntimeException)과 Checked Exception (Exception)
+    @Transactional
+    public void 언체크_예외_발생(String name) {
+        유저_만들기("해부1",1000);
+        throw new RuntimeException("이건 롤백 되나?");
+    }
 
+    /*
+    * 체크 예외는 롤백이 되지 않는다.
+    * 비즈니스적으로 발생 할 수 있는 예외이니 개발자가 직접 처리해라! 라는 의미
+    * 복구가 가능한 상황일 수도 있으니까 스프링도 함부로 롤백하지 않고 개발자에게 맡긴다.
+    * @Transactional(rollbackFor = Exception.class)
+    * 옵션을 추가해서 "Exception이 나도 롤백해라"라고 명령할 수 있음
+    * */
+
+    @Transactional
+    public void 체크_예외_발생(String name) throws Exception {
+        유저_만들기("해부2", 1000);
+        throw new Exception("이건 롤백 안된다던데?");
+    }
 
 
 

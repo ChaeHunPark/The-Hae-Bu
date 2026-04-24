@@ -7,10 +7,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
-public class TransactionHaebuTest {
+public class Transaction_01_02_03_04_Test {
 
     @Autowired HaebuService haebuService;
     @Autowired UserRepository userRepository;
@@ -56,6 +55,27 @@ public class TransactionHaebuTest {
         haebuService.돈_채우기_트랜잭션_없음("해부11",5000);
         User user = userRepository.findByName("해부11");
         System.out.println(user.돈_확인하기());
+    }
+
+    @Test
+    void 실험4_체크_예외와_언_체크_예외의_롤백_테스트() {
+
+        try {
+            haebuService.언체크_예외_발생("언체크");
+        } catch (Exception e) {
+            System.out.println("에러 메시지: " + e.getMessage());
+        }
+
+
+        try {
+            haebuService.체크_예외_발생("체크");
+        } catch (Exception e) {
+            System.out.println("에러 메시지: " + e.getMessage());
+        }
+
+        // 결과 확인
+        System.out.println("--- DB 결과 확인 ---");
+        userRepository.findAll().forEach(u -> System.out.println(u.getName()));
     }
 
 }
