@@ -1,18 +1,26 @@
 package com.example.the_hae_bu;
 
 import com.example.the_hae_bu.domain.User;
+import com.example.the_hae_bu.repository.LogRepository;
+import com.example.the_hae_bu.repository.OrderRepository;
 import com.example.the_hae_bu.repository.UserRepository;
 import com.example.the_hae_bu.service.HaebuService;
+import com.example.the_hae_bu.service.OrderService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class Transaction_01_02_03_04_Test {
+public class Transaction_01_02_03_04_05_Test {
 
     @Autowired HaebuService haebuService;
     @Autowired UserRepository userRepository;
+    @Autowired OrderService orderService;
+    @Autowired
+    OrderRepository orderRepository;
+    @Autowired
+    LogRepository logRepository;
 
 
     @AfterEach
@@ -76,6 +84,18 @@ public class Transaction_01_02_03_04_Test {
         // 결과 확인
         System.out.println("--- DB 결과 확인 ---");
         userRepository.findAll().forEach(u -> System.out.println(u.getName()));
+    }
+
+    @Test
+    void 실험5_전파_속성_테스트() {
+        try {
+            orderService.주문_진행("치킨");
+        } catch (Exception e) {
+            System.out.println("예외 : " + e.getMessage());
+        }
+        System.out.println("----- DB 결과 -----");
+        System.out.println("주문 갯수 : " + orderRepository.count());
+        System.out.println("로그 갯수 : " + logRepository.count());
     }
 
 }
