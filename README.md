@@ -22,7 +22,8 @@
 | **03** | **[프록시 자기 호출(Self-Invocation)의 배신](./docs/03-proxy-self-invocation.md)** | Internal Call, AspectJ, Bean Separation | ✅ 집도 완료 |
 | **04** | **[예외 발생 시 롤백 정책 (Checked vs Unchecked)](./docs/04-exception-rollback.md)** | RuntimeException, RollbackFor, Exception Hierarchy | ✅ 집도 완료 |
 | **05** | **[트랜잭션 전파(REQUIRES_NEW)의 생존 전략](./docs/05-propagation-requires-new.md)** | Physical/Logical TX, HikariCP Deadlock | ✅ 집도 완료 |
-| **06** | **JPA N+1 문제: 연관 관계의 함정** | Fetch Join, EntityGraph, BatchSize | 🏗️ 집도 예정 |
+| **06** | **[JPA N+1 문제: 연관 관계의 함정](./docs/06-jpa-n-plus-one.md)** | Fetch Join, EntityGraph, BatchSize | ✅ 집도 완료 |
+| **07** | **영속성 컨텍스트: 1차 캐시와 동일성 보장** | Persistence Context, Identity, Dirty Checking | 🏗️ 집도 예정 |
 
 ---
 
