@@ -15,16 +15,16 @@
 ## 📂 실험 리스트 (The Log)
 ### 🔬 백엔드 해부학자: 100인의 마스터 커리큘럼 (실험 현황판)
 
-| 순번 | 실험 주제 (Click to Report)                                                         | 핵심 키워드 | 상태 |
-| :--- |:--------------------------------------------------------------------------------| :--- | :--- |
-| **01** | **[@Transactional을 빼면 어떻게 될까?](./docs/01-transactional-off.md)**                | AOP, Proxy, Dirty Checking | ✅ 집도 완료 |
-| **02** | **[@Transactional(readOnly = true)의 실체](./docs/02-transactional-read-only.md)** | Snapshot, Connection Optimization | ✅ 집도 완료 |
-| **03** | **[프록시 자기 호출(Self-Invocation)의 배신](./docs/03-proxy-self-invocation.md)**        | Internal Call, AspectJ, Bean Separation | ✅ 집도 완료 |
+| 순번     | 실험 주제 (Click to Report)                                                         | 핵심 키워드                                             | 상태 |
+|:-------|:--------------------------------------------------------------------------------|:---------------------------------------------------| :--- |
+| **01** | **[@Transactional을 빼면 어떻게 될까?](./docs/01-transactional-off.md)**                | AOP, Proxy, Dirty Checking                         | ✅ 집도 완료 |
+| **02** | **[@Transactional(readOnly = true)의 실체](./docs/02-transactional-read-only.md)** | Snapshot, Connection Optimization                  | ✅ 집도 완료 |
+| **03** | **[프록시 자기 호출(Self-Invocation)의 배신](./docs/03-proxy-self-invocation.md)**        | Internal Call, AspectJ, Bean Separation            | ✅ 집도 완료 |
 | **04** | **[예외 발생 시 롤백 정책 (Checked vs Unchecked)](./docs/04-exception-rollback.md)**     | RuntimeException, RollbackFor, Exception Hierarchy | ✅ 집도 완료 |
-| **05** | **[트랜잭션 전파(REQUIRES_NEW)의 생존 전략](./docs/05-propagation-requires-new.md)**       | Physical/Logical TX, HikariCP Deadlock | ✅ 집도 완료 |
-| **06** | **[JPA N+1 문제: 연관 관계의 함정](./docs/06-jpa-n-plus-one.md)**                        | Fetch Join, EntityGraph, BatchSize | ✅ 집도 완료 |
-| **07** | **[영속성 컨텍스트: 1차 캐시와 동일성 보장](./docs/07-persistence-context.md)**                 | Persistence Context, Identity, Dirty Checking | ✅ 집도 완료 |
-
+| **05** | **[트랜잭션 전파(REQUIRES_NEW)의 생존 전략](./docs/05-propagation-requires-new.md)**       | Physical/Logical TX, HikariCP Deadlock             | ✅ 집도 완료 |
+| **06** | **[JPA N+1 문제: 연관 관계의 함정](./docs/06-jpa-n-plus-one.md)**                        | Fetch Join, EntityGraph, BatchSize                 | ✅ 집도 완료 |
+| **07** | **[영속성 컨텍스트: 1차 캐시와 동일성 보장](./docs/07-persistence-context.md)**                 | Persistence Context, Identity, Dirty Checking      | ✅ 집도 완료 |
+| **08** | **[변경 감지(Dirty Checking): 업데이트의 비밀](./docs/08-dirty-checking-snap-shot.md)** 	                                     | Snapshot, Flush, Managed Entity                    |	✅ 집도 완료|
 ---
 
 ## 🛠️ Stack & Infrastructure

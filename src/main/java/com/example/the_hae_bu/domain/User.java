@@ -36,5 +36,9 @@ public class User {
         this.money += money;
     }
 
+    public void 이름_수정(String name){
+        this.name = name;
+    }
+
 
 }
